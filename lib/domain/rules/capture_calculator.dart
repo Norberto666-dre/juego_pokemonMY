@@ -19,7 +19,8 @@ class CaptureInput {
 }
 
 class CaptureResult {
-  const CaptureResult({required this.probability, required this.shakes, required this.caught});
+  const CaptureResult(
+      {required this.probability, required this.shakes, required this.caught});
   final double probability;
   final int shakes;
   final bool caught;
@@ -31,18 +32,25 @@ class CaptureCalculator {
 
   double statusBonus(StatusCondition s) => switch (s) {
         StatusCondition.sleep || StatusCondition.freeze => 2.0,
-        StatusCondition.paralysis || StatusCondition.poison || StatusCondition.burn => 1.5,
+        StatusCondition.paralysis ||
+        StatusCondition.poison ||
+        StatusCondition.burn =>
+          1.5,
         _ => 1.0,
       };
 
   double modifiedRate(CaptureInput i) {
-    final a = ((3 * i.maxHp - 2 * i.currentHp) * i.captureRate * i.ballMultiplier) /
-        (3 * i.maxHp) * statusBonus(i.status);
+    final a =
+        ((3 * i.maxHp - 2 * i.currentHp) * i.captureRate * i.ballMultiplier) /
+            (3 * i.maxHp) *
+            statusBonus(i.status);
     return a.clamp(1.0, 255.0);
   }
 
   CaptureResult attempt(CaptureInput i, {bool masterBall = false}) {
-    if (masterBall) return const CaptureResult(probability: 1, shakes: 3, caught: true);
+    if (masterBall) {
+      return const CaptureResult(probability: 1, shakes: 3, caught: true);
+    }
     final a = modifiedRate(i);
     final b = 1048560 / sqrt(sqrt(16711680 / a));
     var p = (b / 65536).clamp(0.0, 1.0);
@@ -55,6 +63,9 @@ class CaptureCalculator {
         break;
       }
     }
-    return CaptureResult(probability: pow(p, 4).toDouble(), shakes: shakes.clamp(0, 3), caught: shakes >= 4);
+    return CaptureResult(
+        probability: pow(p, 4).toDouble(),
+        shakes: shakes.clamp(0, 3),
+        caught: shakes >= 4);
   }
 }

@@ -13,5 +13,4 @@ abstract class MazeRun with _$MazeRun {
     required List<String> discoveredSecretIds,
     @Default('active') String status,
   }) = _MazeRun;
-
 }

@@ -4,7 +4,8 @@ class BattleScreen extends StatelessWidget {
   const BattleScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: const Text('Battle')), body: const Center(child: Text('Battle')));
+    return Scaffold(
+        appBar: AppBar(title: const Text('Battle')),
+        body: const Center(child: Text('Battle')));
   }
 }
-

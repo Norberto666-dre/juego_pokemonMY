@@ -29,5 +29,4 @@ abstract class CreatureInstance with _$CreatureInstance {
     int? currentHp,
     @Default(StatusCondition.none) StatusCondition status,
   }) = _CreatureInstance;
-
 }

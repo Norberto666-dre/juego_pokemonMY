@@ -17,7 +17,6 @@ abstract class Move with _$Move {
     required MoveEffect effect,
     String? description,
   }) = _Move;
-
 }
 
 @freezed
@@ -31,5 +30,4 @@ abstract class MoveEffect with _$MoveEffect {
     @Default(0) int recoilPercent,
     @Default(1.0) double critRatioBonus,
   }) = _MoveEffect;
-
 }

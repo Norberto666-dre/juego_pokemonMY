@@ -2,7 +2,8 @@ import '../../../core/random/rng.dart';
 import '../../../domain/value_objects/enums.dart';
 
 class SlotSymbol {
-  const SlotSymbol({required this.id, required this.rarity, required this.weight});
+  const SlotSymbol(
+      {required this.id, required this.rarity, required this.weight});
   final String id;
   final Rarity rarity;
   final double weight;
@@ -34,11 +35,16 @@ class SlotEngine {
   SlotSpin spin() {
     final outcome = rng.weighted(config.outcomeWeights);
     final winner = rng.pick(config.symbols);
-    final other = config.symbols.firstWhere((s) => s.id != winner.id, orElse: () => winner);
+    final other = config.symbols
+        .firstWhere((s) => s.id != winner.id, orElse: () => winner);
     final center = switch (outcome) {
       SlotOutcome.match3 => [winner, winner, winner],
       SlotOutcome.match2 => [winner, winner, other],
-      SlotOutcome.miss => [config.symbols[0], config.symbols[1 % config.symbols.length], config.symbols[2 % config.symbols.length]],
+      SlotOutcome.miss => [
+          config.symbols[0],
+          config.symbols[1 % config.symbols.length],
+          config.symbols[2 % config.symbols.length]
+        ],
     };
     return SlotSpin(outcome: outcome, centerLine: center);
   }

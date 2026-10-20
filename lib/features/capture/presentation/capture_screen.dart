@@ -4,7 +4,8 @@ class CaptureScreen extends StatelessWidget {
   const CaptureScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: const Text('Capture')), body: const Center(child: Text('Capture')));
+    return Scaffold(
+        appBar: AppBar(title: const Text('Capture')),
+        body: const Center(child: Text('Capture')));
   }
 }
-

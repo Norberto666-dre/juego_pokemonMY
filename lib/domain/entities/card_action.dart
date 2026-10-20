@@ -21,5 +21,4 @@ abstract class CardAction with _$CardAction {
     String? tcgCardId,
     @Default(1) int level,
   }) = _CardAction;
-
 }

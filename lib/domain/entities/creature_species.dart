@@ -26,7 +26,6 @@ abstract class CreatureSpecies with _$CreatureSpecies {
     @Default(GrowthRate.mediumFast) GrowthRate growthRate,
     @Default(60) int baseExp,
   }) = _CreatureSpecies;
-
 }
 
 enum GrowthRate { fast, mediumFast, mediumSlow, slow }

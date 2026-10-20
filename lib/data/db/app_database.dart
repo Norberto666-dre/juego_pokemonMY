@@ -10,7 +10,8 @@ part 'app_database.g.dart';
 @DriftDatabase(tables: [PlayerProfileTable, SpeciesTable, CreatureOwnedTable])
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_open());
-  @override int get schemaVersion => 1;
+  @override
+  int get schemaVersion => 1;
 }
 
 LazyDatabase _open() => LazyDatabase(() async {

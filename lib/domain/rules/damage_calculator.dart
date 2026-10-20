@@ -36,13 +36,17 @@ class DamageCalculator {
   final Rng rng;
 
   DamageResult calculate(DamageInput i) {
-    final base = ((((2 * i.attackerLevel) ~/ 5 + 2) * i.power * i.attack ~/ i.defense) ~/ 50) + 2;
+    final base =
+        ((((2 * i.attackerLevel) ~/ 5 + 2) * i.power * i.attack ~/ i.defense) ~/
+                50) +
+            2;
     final stab = i.attackerTypes.contains(i.moveType) ? 1.5 : 1.0;
     final eff = chart.against(i.moveType, i.defenderTypes);
     final crit = i.critical ? 1.5 : 1.0;
     final burn = i.burnedPhysical ? 0.5 : 1.0;
     final rand = 0.85 + rng.nextDouble() * 0.15;
     final total = base * i.weather * crit * rand * stab * eff * burn * i.other;
-    return DamageResult(eff == 0 ? 0 : total.floor().clamp(1, 1 << 30), eff, i.critical);
+    return DamageResult(
+        eff == 0 ? 0 : total.floor().clamp(1, 1 << 30), eff, i.critical);
   }
 }

@@ -19,5 +19,4 @@ abstract class PlayerProfile with _$PlayerProfile {
     required List<String> badges,
     required DateTime createdAt,
   }) = _PlayerProfile;
-
 }

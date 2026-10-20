@@ -1,6 +1,22 @@
 enum PokeType {
-  normal, fire, water, grass, electric, ice, fighting, poison, ground,
-  flying, psychic, bug, rock, ghost, dragon, dark, steel, fairy,
+  normal,
+  fire,
+  water,
+  grass,
+  electric,
+  ice,
+  fighting,
+  poison,
+  ground,
+  flying,
+  psychic,
+  bug,
+  rock,
+  ghost,
+  dragon,
+  dark,
+  steel,
+  fairy,
 }
 
 enum MoveCategory { physical, special, status }
@@ -9,7 +25,17 @@ enum StatusCondition { none, burn, poison, paralysis, freeze, sleep, confusion }
 
 enum Rarity { common, uncommon, rare, epic, legendary }
 
-enum ItemCategory { ball, healing, vitamin, xstat, held, evolution, shortcut, ticket, material }
+enum ItemCategory {
+  ball,
+  healing,
+  vitamin,
+  xstat,
+  held,
+  evolution,
+  shortcut,
+  ticket,
+  material
+}
 
 enum NodeType { battle, chest, shop, cave, boss, rest, secret, gym, event }
 

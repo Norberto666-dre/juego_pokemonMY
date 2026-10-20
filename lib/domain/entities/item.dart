@@ -15,7 +15,6 @@ abstract class Item with _$Item {
     required ItemEffect effect,
     @Default(99) int maxStack,
   }) = _Item;
-
 }
 
 @freezed
@@ -28,5 +27,4 @@ abstract class ItemEffect with _$ItemEffect {
     @Default(0) int xStatStages,
     String? evolutionItemId,
   }) = _ItemEffect;
-
 }

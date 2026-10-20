@@ -16,5 +16,4 @@ abstract class MazeNode with _$MazeNode {
     @Default(false) bool visited,
     String? secretTargetId,
   }) = _MazeNode;
-
 }

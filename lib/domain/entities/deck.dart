@@ -11,5 +11,4 @@ abstract class Deck with _$Deck {
     required List<String> cardIds,
     required DateTime updatedAt,
   }) = _Deck;
-
 }

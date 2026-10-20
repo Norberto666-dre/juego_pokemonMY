@@ -18,11 +18,16 @@ class StatCalculator {
   static Stats compute(CreatureSpecies s, CreatureInstance c) {
     return Stats(
       hp: hp(s.baseStats.hp, c.ivs.hp, c.evs.hp, c.level),
-      atk: other(s.baseStats.atk, c.ivs.atk, c.evs.atk, c.level, natureModifier(c.nature, 'atk')),
-      def: other(s.baseStats.def, c.ivs.def, c.evs.def, c.level, natureModifier(c.nature, 'def')),
-      spa: other(s.baseStats.spa, c.ivs.spa, c.evs.spa, c.level, natureModifier(c.nature, 'spa')),
-      spd: other(s.baseStats.spd, c.ivs.spd, c.evs.spd, c.level, natureModifier(c.nature, 'spd')),
-      spe: other(s.baseStats.spe, c.ivs.spe, c.evs.spe, c.level, natureModifier(c.nature, 'spe')),
+      atk: other(s.baseStats.atk, c.ivs.atk, c.evs.atk, c.level,
+          natureModifier(c.nature, 'atk')),
+      def: other(s.baseStats.def, c.ivs.def, c.evs.def, c.level,
+          natureModifier(c.nature, 'def')),
+      spa: other(s.baseStats.spa, c.ivs.spa, c.evs.spa, c.level,
+          natureModifier(c.nature, 'spa')),
+      spd: other(s.baseStats.spd, c.ivs.spd, c.evs.spd, c.level,
+          natureModifier(c.nature, 'spd')),
+      spe: other(s.baseStats.spe, c.ivs.spe, c.evs.spe, c.level,
+          natureModifier(c.nature, 'spe')),
     );
   }
 }

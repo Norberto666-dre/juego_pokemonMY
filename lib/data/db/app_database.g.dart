@@ -647,6 +647,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $SpeciesTableTable speciesTable = $SpeciesTableTable(this);
   late final $CreatureOwnedTableTable creatureOwnedTable =
       $CreatureOwnedTableTable(this);
+  late final CreatureDao creatureDao = CreatureDao(this as AppDatabase);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();

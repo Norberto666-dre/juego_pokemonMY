@@ -8,7 +8,9 @@ import 'daos/creature_dao.dart';
 
 part 'app_database.g.dart';
 
-@DriftDatabase(tables: [PlayerProfileTable, SpeciesTable, CreatureOwnedTable], daos: [CreatureDao])
+@DriftDatabase(
+    tables: [PlayerProfileTable, SpeciesTable, CreatureOwnedTable],
+    daos: [CreatureDao])
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_open());
   @override

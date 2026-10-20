@@ -30,7 +30,8 @@ class _SlotScreenState extends ConsumerState<SlotScreen> {
   Future<void> _spin() async {
     setState(() => _spinning = true);
     await Future.delayed(const Duration(milliseconds: 800));
-    final engine = SlotEngine(_config, SeededRng(DateTime.now().millisecondsSinceEpoch));
+    final engine =
+        SlotEngine(_config, SeededRng(DateTime.now().millisecondsSinceEpoch));
     final result = engine.spin();
     setState(() {
       _last = result;
@@ -46,12 +47,16 @@ class _SlotScreenState extends ConsumerState<SlotScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(_spinning ? 'Girando...' : (_last == null ? 'Pulsa girar' : _last!.outcome.name)),
+            Text(_spinning
+                ? 'Girando...'
+                : (_last == null ? 'Pulsa girar' : _last!.outcome.name)),
             const SizedBox(height: 16),
             if (_last != null)
               Text(_last!.centerLine.map((s) => s.id).join(' | ')),
             const SizedBox(height: 24),
-            FilledButton(onPressed: _spinning ? null : _spin, child: const Text('Girar')),
+            FilledButton(
+                onPressed: _spinning ? null : _spin,
+                child: const Text('Girar')),
           ],
         ),
       ),

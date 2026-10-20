@@ -8,11 +8,13 @@ class CreatureRepositoryImpl implements CreatureRepository {
 
   @override
   Stream<List<Map<String, dynamic>>> watchAll() =>
-      db.creatureDao.watchAll().map((rows) => rows.map((r) => <String, dynamic>{
-            'uid': r.uid,
-            'speciesId': r.speciesId,
-            'level': r.level,
-          }).toList());
+      db.creatureDao.watchAll().map((rows) => rows
+          .map((r) => <String, dynamic>{
+                'uid': r.uid,
+                'speciesId': r.speciesId,
+                'level': r.level,
+              })
+          .toList());
 
   @override
   Future<void> add(Map<String, dynamic> row) async {

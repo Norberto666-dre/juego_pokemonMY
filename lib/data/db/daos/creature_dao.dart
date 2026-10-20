@@ -5,7 +5,8 @@ import '../tables/tables.dart';
 part 'creature_dao.g.dart';
 
 @DriftAccessor(tables: [CreatureOwnedTable])
-class CreatureDao extends DatabaseAccessor<AppDatabase> with _$CreatureDaoMixin {
+class CreatureDao extends DatabaseAccessor<AppDatabase>
+    with _$CreatureDaoMixin {
   CreatureDao(super.db);
 
   Stream<List<CreatureOwnedTableData>> watchAll() =>

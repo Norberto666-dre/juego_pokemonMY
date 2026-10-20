@@ -17,7 +17,8 @@ class HomeScreen extends ConsumerWidget {
                 itemCount: items.length,
                 itemBuilder: (_, i) => ListTile(
                   title: Text('Criatura ${items[i]['uid']}'),
-                  subtitle: Text('Especie ${items[i]['speciesId']} · Nv ${items[i]['level']}'),
+                  subtitle: Text(
+                      'Especie ${items[i]['speciesId']} · Nv ${items[i]['level']}'),
                 ),
               ),
         loading: () => const Center(child: CircularProgressIndicator()),
